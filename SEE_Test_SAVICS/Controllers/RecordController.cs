@@ -50,11 +50,11 @@ namespace SEE_Test_SAVICS.Controllers
                     Records = JsonConvert.DeserializeObject<List<Record>>(File.ReadAllText(
                     Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "DB.json"), Encoding.UTF8));
                     if (!String.IsNullOrWhiteSpace(q))
-                        Records = Records.Where(p => p.LastName.Contains(q) || p.FirstName.Contains(q) || (p.LastName + " " + p.FirstName).Contains(q)).ToList();
+                        Records = Records.Where(p => p.LastName.ToLower().Contains(q) || p.FirstName.ToLower().Contains(q) || (p.LastName.ToLower() + " " + p.FirstName.ToLower()).Contains(q.ToLower())).ToList();
                     if (minors.HasValue && minors.Value == 1)
                         Records = Records.Where(p => p.Age < 18).ToList();
                 });
-                return Request.CreateResponse(HttpStatusCode.OK, Records);
+               return Request.CreateResponse(HttpStatusCode.OK, Records);
             }
             catch (Exception e)
             {

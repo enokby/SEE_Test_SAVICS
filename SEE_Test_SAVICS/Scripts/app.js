@@ -10,7 +10,7 @@ var get = function () {
     }).done(function (data) {
         records = data;
         $('#Save').click(post);
-        $('#Search').change(find);
+        $('#Search').keyup(find);
         $('#minors').change(find);
         show();
     });
