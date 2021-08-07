@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<h2>New medical record</h2>
+<div class="row">
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="FirstName" placeholder="First ame">
+    </div>
+    <div class="col-md-6">
+        <input type="text" class="form-control" id="LastName" placeholder="Last name">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <input type="radio" class="" checked id="Male" value="Male" name="Gender" /><label for="Male">Male</label>
+        <input type="radio" class="" id="Female" value="Female" name="Gender" /><label for="Female">Female</label>
+    </div>
+    <div class="col-md-6">
+        <input type="number" class="form-control" id="Age" placeholder="Age">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <select id="City" class="form-control">
+            <option value="Ouagadougou">Ouagadougou</option>
+            <option value="Bobo Dioulasso">Ouagadougou</option>
+            <option value="Abidjan">Abidjan</option>
+            <option value="Yamoussoukro">Yamoussoukro</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+        <select id="Country" class="form-control">
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Côte d'ivoire">Côte d'ivoire</option>
+        </select>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <h4 class="pull-right">Live with Diabetes ?</h4>
+    </div>
+    <div class="col-md-6">
+        <input type="radio" class="" id="Yes" value="Yes" name="Diabetes" /><label for="Yes">Yes</label>
+        <input type="radio" class="" id="No" value="No" name="Diabetes" /><label for="No">No</label>
+        <input type="radio" class="" id="Unknown" value="Unknown" checked name="Diabetes" /><label for="Unknown">Unknown</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-primary pull-left" id="Save">Save</button>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <h3>List of medical records</h3>
+    </div>
+    <div class="col-md-6">
+        <input type="checkbox" id="minors" /><label for="minors">Only minors</label>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <input type="text" class="form-control" id="Search" placeholder="Find records">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <table id="List"></table>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/app.js"></script>
+}
