@@ -18,7 +18,7 @@ var get = function () {
 
 var find = function () {
     var keyword = $('#Search').val();
-    var minors = $('#minors').attr('checked') ? "&minors=1" : "";
+    var minors = $('#minors').prop('checked') ? "&minors=1" : "&minors=0";
     $.ajax({
         url: 'http://localhost:8484/api/1.0/emr?q=' + keyword + minors,
         contentType: "application/json"

@@ -51,7 +51,7 @@ namespace SEE_Test_SAVICS.Controllers
                     Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App_Data", "DB.json"), Encoding.UTF8));
                     if (!String.IsNullOrWhiteSpace(q))
                         Records = Records.Where(p => p.LastName.Contains(q) || p.FirstName.Contains(q) || (p.LastName + " " + p.FirstName).Contains(q)).ToList();
-                    if (minors.HasValue)
+                    if (minors.HasValue && minors.Value == 1)
                         Records = Records.Where(p => p.Age < 18).ToList();
                 });
                 return Request.CreateResponse(HttpStatusCode.OK, Records);
